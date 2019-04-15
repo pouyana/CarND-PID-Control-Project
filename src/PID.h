@@ -58,6 +58,12 @@ public:
   void Reset();
 
   /**
+  * Adds at the given index the given value
+  * 
+  */
+  void AddAtIndex(int index, double value);
+
+  /**
    * Print the vals
    */
   void PrintVals();
