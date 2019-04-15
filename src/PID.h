@@ -2,9 +2,20 @@
 #define PID_H
 
 #include <vector>
+#include <string>
+#include <iostream>
+#include <cmath>
 
 class PID
 {
+
+  enum class State
+  {
+    S1,
+    S2,
+    S3
+  };
+
 public:
   /**
    * Constructor
@@ -40,11 +51,16 @@ public:
    */
   double TotalError();
 
-/**
+  /**
  * Resets the PID controller
  * 
  */
   void Reset();
+
+  /**
+   * Print the vals
+   */
+  void PrintVals();
 
 private:
   /**
@@ -65,12 +81,12 @@ private:
    * 
    */
   bool twiddle_mode;
-  double dp;
-  double di;
-  double dd;
+  std::vector<double> dp;
   int it;
   double best_error;
-  bool change_direction;
+  double all_error;
+  int dp_index;
+  State state;
 };
 
 #endif // PID_H
