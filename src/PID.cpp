@@ -12,7 +12,6 @@ void PID::Init(double Kp_, double Ki_, double Kd_, bool twiddle_mode_)
   this->p_error = 0;
   this->i_error = 0;
   this->d_error = 0;
-  //this->dp = {0.1, 0.0001, 1.0};
   this->dp = {0.05, 0.0001, 1.0};
   this->dp_index = 0;
   this->best_error = 10000000000;
