@@ -8,7 +8,7 @@ In this project the following objectives are achieved:
 
 ## Implementation of PID controller in C++
 
-The PID controller was implemented using the help videos and the course. It uses the PID class `PID.ccp` in is done in two steps. The method `updateError` (Lines 25-30) calculates the errors added by the cte in every part of p, i, d of the controller. The `TotalError` (Lines 110-114) calculates the steering from the updated errors.
+The PID controller was implemented using the help videos and the course. It uses the PID class `PID.ccp` and is done in two steps. The method `updateError` (Lines 25-30) calculates the errors added by the `cte` in for every `p`, `i` and `d` of the controller. The `TotalError` (Lines 110-114) calculates the steering from the updated errors.
 
 ## Setting Hyper-parameters
 
@@ -62,4 +62,4 @@ This makes the controller respond to the changes slower, the lower the d, the sl
 
 ## Using Twiddle to find the hyper-parameters
 
-In the `PID.cpp` the twiddle function was also implemented (Lines 32-80). It can be started with a boolean flag in the `main.cpp`. In contrast to the Udacity implementation of Twiddle, I used a simple state machine, so my main file stays simple. The first parameter of the Twiddle are important here. In Udacity implementation in python the system had no boundary (road boundaries) so at some points the system would converge to the right parameters. In this assignment the road boundaries made the twiddle function struggle. So the first parameters set to the twiddle function should be set in a manner that the car does not collide or stays on the boundaries. With experimentation, this parameters are found. Then with the help of twiddle better parameters are calculated. What is delivered by twiddle is not the best parameter and still can be optimized.
+In the `PID.cpp` the twiddle function was also implemented (Lines 32-80). It can be started with a boolean flag in the `main.cpp`. In contrast to the Udacity implementation of Twiddle, I used a simple state machine, so my main file stays simple. The first parameters of the Twiddle are important here. In Udacity implementation in python the system had no boundary (road boundaries) so at some points the system would converge to the right parameters. In this assignment the road boundaries made the twiddle function struggle. So the first parameters set to the twiddle function should be set in a manner that the car does not collide or stays on the boundaries. With experimentation, this parameters are found. Then with the help of twiddle better parameters are calculated. What is delivered by twiddle is not the best parameter and still can be optimized.
